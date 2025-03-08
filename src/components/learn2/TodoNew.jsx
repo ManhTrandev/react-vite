@@ -1,19 +1,25 @@
+import { useState } from 'react';
+
 const TodoNew = (props) => {
-  console.log('>>>Check ', props);
+  const [valueInput, setValueIpnput] = useState('HIP');
   const { AddnewData } = props;
   // AddnewData('HIP');
   const HandleClick = () => {
-    alert('Click me');
+    console.log('<<<Check', valueInput);
   };
-  const HandleOnchange = (event) => {
-    console.log('>>>Check change', event.target.value);
+  const HandleOnchange = (name) => {
+    setValueIpnput(name);
   };
   return (
     <div className="todo-new">
-      <input type="index" onChange={HandleOnchange} />
+      <input
+        type="index"
+        onChange={(event) => HandleOnchange(event.target.value)}
+      />
       <button style={{ cursor: 'pointer' }} onClick={HandleClick}>
         Add
       </button>
+      <div>Value input is {valueInput}</div>
     </div>
   );
 };
