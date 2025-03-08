@@ -1,5 +1,11 @@
+import { useState } from 'react';
+
 const TodoData = (props) => {
-  const { todoList } = props;
+  const { todoList, DeleteData } = props;
+  // const { DeleteData, setDeleteData } = useState();
+  const HandleDelete = (id) => {
+    DeleteData(id);
+  };
   console.log('<<<CHeck', props);
   return (
     <div className="todo-data">
@@ -9,7 +15,12 @@ const TodoData = (props) => {
           <div className={`todo-item`} key={item.id}>
             <div> {item.name}</div>
 
-            <button>Delete</button>
+            <button
+              onClick={() => HandleDelete(item.id)}
+              style={{ cursor: 'pointer' }}
+            >
+              Delete
+            </button>
           </div>
         );
       })}{' '}
