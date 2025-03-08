@@ -5,7 +5,7 @@ const TodoNew = (props) => {
   const { AddnewData } = props;
   // AddnewData('HIP');
   const HandleClick = () => {
-    console.log('<<<Check', valueInput);
+    AddnewData(valueInput);
   };
   const HandleOnchange = (name) => {
     setValueIpnput(name);
