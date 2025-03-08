@@ -9,10 +9,13 @@ const App = () => {
     address: 'HaNoi',
     country: 'VietNam',
   };
+  const AddnewData = (name) => {
+    alert(`Error 404 !!! ${name}`);
+  };
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
-      <TodoNew />
+      <TodoNew AddnewData={AddnewData} />
       <TodoData name={name} age={age} data={data} />
       <div className="todo-image">
         <img className="logo" src={ReactLogo} />
