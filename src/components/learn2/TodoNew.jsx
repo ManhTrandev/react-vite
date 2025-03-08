@@ -6,6 +6,7 @@ const TodoNew = (props) => {
   // AddnewData('HIP');
   const HandleClick = () => {
     AddnewData(valueInput);
+    setValueIpnput('');
   };
   const HandleOnchange = (name) => {
     setValueIpnput(name);
@@ -15,6 +16,7 @@ const TodoNew = (props) => {
       <input
         type="index"
         onChange={(event) => HandleOnchange(event.target.value)}
+        value={valueInput}
       />
       <button style={{ cursor: 'pointer' }} onClick={HandleClick}>
         Add
