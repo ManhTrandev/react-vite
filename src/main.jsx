@@ -2,16 +2,18 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ProductPage from './pages/product.jsx';
+import BookPage from './pages/book.jsx';
 import './styles/global.css';
 import LoginPage from './pages/login.jsx';
 import RegisterPage from './pages/register.jsx';
 import UserPage from './pages/user.jsx';
 import TodoApp from './components/learn2/TodoApp.jsx';
+import ErrorPage from './pages/error.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -22,8 +24,8 @@ const router = createBrowserRouter([
         element: <UserPage />,
       },
       {
-        path: '/products',
-        element: <ProductPage />,
+        path: '/books',
+        element: <BookPage />,
       },
     ],
   },
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/products',
-    element: <ProductPage />,
+    element: <BookPage />,
   },
 ]);
 
