@@ -3,6 +3,8 @@ import TodoNew from './components/learn2/TodoNew';
 import './components/learn2/todo.css';
 import ReactLogo from './assets/react.svg';
 import { useState } from 'react';
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
 const App = () => {
   const [todoList, setTodoList] = useState([
     // { id: 1, name: 'Learn React' },
@@ -25,24 +27,28 @@ const App = () => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
   return (
-    <div className="todo-container">
-      <div className="todo-title">Todo List</div>
-      <TodoNew AddnewData={AddnewData} />
-      {/* {todoList.length > 0 && <TodoData todoList={todoList} />}
+    <>
+      <Header />
+      <div className="todo-container">
+        <div className="todo-title">Todo List</div>
+        <TodoNew AddnewData={AddnewData} />
+        {/* {todoList.length > 0 && <TodoData todoList={todoList} />}
 
       {todoList.length === 0 && (
         <div className="todo-image">
           <img className="logo" src={ReactLogo} />
         </div>
       )} */}
-      {todoList.length > 0 ? (
-        <TodoData todoList={todoList} DeleteData={DeleteData} />
-      ) : (
-        <div className="todo-image">
-          <img className="logo" src={ReactLogo} />
-        </div>
-      )}
-    </div>
+        {todoList.length > 0 ? (
+          <TodoData todoList={todoList} DeleteData={DeleteData} />
+        ) : (
+          <div className="todo-image">
+            <img className="logo" src={ReactLogo} />
+          </div>
+        )}
+      </div>
+      <Footer />
+    </>
   );
 };
 
