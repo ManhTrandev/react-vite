@@ -7,12 +7,16 @@ import './styles/global.css';
 import LoginPage from './pages/login.jsx';
 import RegisterPage from './pages/register.jsx';
 import UserPage from './pages/user.jsx';
-
+import TodoApp from './components/learn2/TodoApp.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+        index: true,
+        element: <TodoApp />,
+      },
       {
         path: '/users',
         element: <UserPage />,
